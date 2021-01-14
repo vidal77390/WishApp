@@ -18,19 +18,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8MP-hw-BEp">
-                    <rect key="frame" x="158.5" y="275" width="97" height="30"/>
-                    <state key="normal" title="ContactPicker"/>
-                    <connections>
-                        <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="7jS-jk-zQq"/>
-                    </connections>
-                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créer une WishList pour pouvoir l'envoyer a vos amis ! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxc-gW-DUg">
+                    <rect key="frame" x="10" y="389" width="394" height="118.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                    <color key="textColor" red="0.056391929507541641" green="0.39447176395939088" blue="0.088453504235239053" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="8MP-hw-BEp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FC3-cu-SSV"/>
-                <constraint firstItem="8MP-hw-BEp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="231" id="h7t-AA-CJc"/>
+                <constraint firstItem="yxc-gW-DUg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="aCL-Uc-gyw"/>
+                <constraint firstItem="yxc-gW-DUg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bsK-Tl-74b"/>
+                <constraint firstAttribute="trailing" secondItem="yxc-gW-DUg" secondAttribute="trailing" constant="10" id="sTH-dp-uI5"/>
             </constraints>
             <point key="canvasLocation" x="139" y="134"/>
         </view>
