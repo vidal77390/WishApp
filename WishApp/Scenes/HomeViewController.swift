@@ -15,6 +15,8 @@ class HomeViewController: UIViewController {
     var contactStore = CNContactStore()
     
     var phoneNumber: String?
+    
+    let wishService: WishService = LocalWishService.shared
 
 
     override func viewDidLoad() {
@@ -30,18 +32,36 @@ class HomeViewController: UIViewController {
     
     @objc
     func createWishList() -> Void {
-        var nameTextField: UITextField?
+        var nameTextField: UITextField!
         let alertController = UIAlertController(title: "New WishList !", message: "Veuillez saisir le nom de votre WishList", preferredStyle: .alert)
         alertController.addTextField { (txtName) -> Void in
             nameTextField = txtName
-            nameTextField?.placeholder = "Nom"
+            nameTextField.placeholder = "Nom"
         }
         let createAction = UIAlertAction(title: "createWishList", style: .default) { (action) -> Void in
             // TODO create and store wishList
-            print("wishlist created with : \(nameTextField?.text)")
+            // Dmytro's storage
+            let name: String = nameTextField.text!
+            print("TEXTFIELD: \(name)")
+            
+            let dto = WishCreateDTO(name: name, message: "je vois une voiture")
+            self.wishService.create(dto: dto) { (err, wish) in
+                guard err == nil else {
+                    let alert = UIAlertController(title: "Marche pas", message: "Probleme de création", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                        alert.dismiss(animated: true)
+                    }))
+                    self.present(alert, animated: true)
+                    return
+                }
+                self.navigationController?.popViewController(animated: true)
+            }
+            //
+            print("wishlist created with : \(nameTextField.text!)")
         }
         alertController.addAction(createAction)
         present(alertController, animated: true, completion: nil)
+    
     }
     
     

@@ -20,6 +20,9 @@ class WishListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Wishes"
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -33,5 +36,38 @@ class WishListViewController: UIViewController {
             self.wishList = wishList
         }
     }
-
+    
+    @IBAction func touchNext(_ sender: Any) {
+        guard let selectedRows = self.tableView.indexPathsForSelectedRows else {
+            return
+        }
+        var selectedWishes: [Wish] = []
+        for i in 0 ..< selectedRows.count {
+            let selectedIndexPath = selectedRows[i]
+            selectedWishes.append(self.wishList[selectedIndexPath.row])
+        }
+        }
 }
+
+extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    private func dequeueOrCreateWishCell(_ tableView: UITableView) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "wish_cell") else {
+            return UITableViewCell(style: .default, reuseIdentifier: "wish_cell")
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.dequeueOrCreateWishCell(tableView)
+        let wish = self.wishList[indexPath.row]
+        cell.textLabel?.text = wish.name
+        cell.detailTextLabel?.text = "\(wish.message)"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.wishList.count
+    }
+}
+
