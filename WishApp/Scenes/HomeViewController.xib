@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,13 +24,24 @@
                     <color key="textColor" red="0.056391929507541641" green="0.39447176395939088" blue="0.088453504235239053" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4J-If-3H8">
+                    <rect key="frame" x="134" y="727" width="147" height="30"/>
+                    <state key="normal" title="Accéder à la WishList"/>
+                    <connections>
+                        <action selector="GoWishList:" destination="-1" eventType="touchUpInside" id="bdb-0j-As3"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="tintColor" red="0.0" green="0.40824389459999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="s4J-If-3H8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="134" id="WnM-cy-mCZ"/>
                 <constraint firstItem="yxc-gW-DUg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="aCL-Uc-gyw"/>
                 <constraint firstItem="yxc-gW-DUg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bsK-Tl-74b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="s4J-If-3H8" secondAttribute="bottom" constant="105" id="ii2-8y-Q17"/>
                 <constraint firstAttribute="trailing" secondItem="yxc-gW-DUg" secondAttribute="trailing" constant="10" id="sTH-dp-uI5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s4J-If-3H8" secondAttribute="trailing" constant="133" id="y3g-Ke-Zme"/>
             </constraints>
             <point key="canvasLocation" x="139" y="134"/>
         </view>

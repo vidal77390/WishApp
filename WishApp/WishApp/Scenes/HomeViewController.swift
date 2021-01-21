@@ -23,46 +23,9 @@ class HomeViewController: UIViewController {
         self.requestForContactAccess(completionHandler: {success in
             print("success : \(success)")
         } )
-        let rightButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createWishList))
-        rightButton.tintColor = UIColor(cgColor: CGColor(red: CGFloat(0.09), green: CGFloat(0.5), blue: CGFloat(0.09), alpha: CGFloat(1.0)))
-        navigationItem.rightBarButtonItem = rightButton
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showContactPicker))
     }
-    
-    @objc
-    func createWishList() -> Void {
-        var nameTextField: UITextField?
-        let alertController = UIAlertController(title: "New WishList !", message: "Veuillez saisir le nom de votre WishList", preferredStyle: .alert)
-        alertController.addTextField { (txtName) -> Void in
-            nameTextField = txtName
-            nameTextField?.placeholder = "Nom"
-        }
-        let createAction = UIAlertAction(title: "createWishList", style: .default) { (action) -> Void in
-            // TODO create and store wishList
-            print("wishlist created with : \(nameTextField?.text)")
-        }
-        alertController.addAction(createAction)
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    
-    @IBAction func GoWishList(_ sender: Any) {
-        self.navigationController?.pushViewController(WishListViewController(), animated: true)
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    ///|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||///|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||///|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||///|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-    /// Part of implementing framework too move later
-    
-    
-    
-    
     
     @objc
     func showContactPicker() -> Void {
@@ -70,7 +33,6 @@ class HomeViewController: UIViewController {
         contactVC.delegate = self
         self.present(contactVC, animated: true, completion: nil)
     }
-    
     
     func requestForContactAccess(completionHandler: @escaping (Bool) -> Void ) {
         let autorisationStatus = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
