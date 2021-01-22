@@ -21,4 +21,7 @@ class WishTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func touchStep(_ sender: UIStepper) {
+        print("\(sender.value)")
+    }
 }

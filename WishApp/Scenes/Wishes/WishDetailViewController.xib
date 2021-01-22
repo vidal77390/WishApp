@@ -21,23 +21,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkO-Ie-L7m">
-                    <rect key="frame" x="186" y="118" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMN-VF-8Bi">
+                    <rect key="frame" x="10" y="135" width="394" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMN-VF-8Bi">
-                    <rect key="frame" x="186" y="179" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1p-mv-SAJ">
+                    <rect key="frame" x="10" y="176" width="394" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1p-mv-SAJ">
-                    <rect key="frame" x="186" y="235" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkO-Ie-L7m">
+                    <rect key="frame" x="10" y="94" width="394" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -45,7 +42,18 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="106" y="86"/>
+            <constraints>
+                <constraint firstItem="FMN-VF-8Bi" firstAttribute="leading" secondItem="w1p-mv-SAJ" secondAttribute="leading" id="EVS-FP-fPz"/>
+                <constraint firstItem="FMN-VF-8Bi" firstAttribute="top" secondItem="fkO-Ie-L7m" secondAttribute="bottom" constant="20" id="IGS-Vl-8Qr"/>
+                <constraint firstItem="FMN-VF-8Bi" firstAttribute="trailing" secondItem="w1p-mv-SAJ" secondAttribute="trailing" id="V1s-UM-gHE"/>
+                <constraint firstItem="w1p-mv-SAJ" firstAttribute="top" secondItem="FMN-VF-8Bi" secondAttribute="bottom" constant="20" id="VXJ-Yg-OOk"/>
+                <constraint firstItem="fkO-Ie-L7m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="awW-jO-elm"/>
+                <constraint firstItem="fkO-Ie-L7m" firstAttribute="leading" secondItem="FMN-VF-8Bi" secondAttribute="leading" id="ghh-17-qz3"/>
+                <constraint firstItem="fkO-Ie-L7m" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="lmI-oG-l00"/>
+                <constraint firstItem="fkO-Ie-L7m" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qro-9J-bqI"/>
+                <constraint firstItem="fkO-Ie-L7m" firstAttribute="trailing" secondItem="FMN-VF-8Bi" secondAttribute="trailing" id="x1a-NZ-H05"/>
+            </constraints>
+            <point key="canvasLocation" x="105.79710144927537" y="85.714285714285708"/>
         </view>
     </objects>
     <resources>

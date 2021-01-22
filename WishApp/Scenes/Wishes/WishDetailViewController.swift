@@ -23,6 +23,7 @@ class WishDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Wish Detail"
         self.nameLabel.text = self.wish.name
         self.descriptionLabel.text = self.wish.message
         self.idLabel.text = self.wish.id

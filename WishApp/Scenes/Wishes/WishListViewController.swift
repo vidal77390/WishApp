@@ -27,6 +27,12 @@ class WishListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @objc func touchEdit() {
+        UIView.animate(withDuration: 0.33) {
+            self.tableView.isEditing = !self.tableView.isEditing
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.wishService.list { (err, wishList) in
             guard err == nil else {
@@ -68,6 +74,18 @@ extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.wishList.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let wish = self.wishList[indexPath.row]
+        let detail = WishDetailViewController.newInstance(wish: wish)
+        self.navigationController?.pushViewController(detail, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let res = self.wishList[sourceIndexPath.row]
+        self.wishList.remove(at: sourceIndexPath.row)
+        self.wishList.insert(res, at: destinationIndexPath.row)
     }
 }
 
