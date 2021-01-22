@@ -7,15 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3096F64B25B9BBA7002B3201 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F64925B9BBA7002B3201 /* WishListViewController.swift */; };
-		3096F64C25B9BBA7002B3201 /* WishListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3096F64A25B9BBA7002B3201 /* WishListViewController.xib */; };
-		3096F65225B9C86B002B3201 /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F65125B9C86B002B3201 /* Wish.swift */; };
-		3096F66125B9CF95002B3201 /* WishService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F66025B9CF95002B3201 /* WishService.swift */; };
-		3096F66925B9CFE2002B3201 /* WishCreateDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F66825B9CFE2002B3201 /* WishCreateDTO.swift */; };
-		3096F67725B9D464002B3201 /* LocalWishService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F67625B9D464002B3201 /* LocalWishService.swift */; };
-		3096F67D25B9D5CB002B3201 /* WishConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F67C25B9D5CB002B3201 /* WishConverter.swift */; };
-		3096F68525B9D60A002B3201 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F68425B9D60A002B3201 /* Converter.swift */; };
-		3096F68A25B9DA90002B3201 /* RandomId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F68925B9DA90002B3201 /* RandomId.swift */; };
 		CFBA0F3025A256C90022F959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA0F2F25A256C90022F959 /* AppDelegate.swift */; };
 		CFBA0F3925A256CA0022F959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFBA0F3825A256CA0022F959 /* Assets.xcassets */; };
 		CFBA0F4725A256CA0022F959 /* WishAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA0F4625A256CA0022F959 /* WishAppTests.swift */; };
@@ -44,15 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3096F64925B9BBA7002B3201 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
-		3096F64A25B9BBA7002B3201 /* WishListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListViewController.xib; sourceTree = "<group>"; };
-		3096F65125B9C86B002B3201 /* Wish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wish.swift; sourceTree = "<group>"; };
-		3096F66025B9CF95002B3201 /* WishService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishService.swift; sourceTree = "<group>"; };
-		3096F66825B9CFE2002B3201 /* WishCreateDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishCreateDTO.swift; sourceTree = "<group>"; };
-		3096F67625B9D464002B3201 /* LocalWishService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWishService.swift; sourceTree = "<group>"; };
-		3096F67C25B9D5CB002B3201 /* WishConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishConverter.swift; sourceTree = "<group>"; };
-		3096F68425B9D60A002B3201 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
-		3096F68925B9DA90002B3201 /* RandomId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomId.swift; sourceTree = "<group>"; };
 		CFBA0F2C25A256C90022F959 /* WishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBA0F2F25A256C90022F959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFBA0F3825A256CA0022F959 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,83 +78,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3096F65025B9C85A002B3201 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3096F65125B9C86B002B3201 /* Wish.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		3096F65C25B9CEE4002B3201 /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-				3096F65D25B9CF0C002B3201 /* Wishes */,
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
-		3096F65D25B9CF0C002B3201 /* Wishes */ = {
-			isa = PBXGroup;
-			children = (
-				3096F66825B9CFE2002B3201 /* WishCreateDTO.swift */,
-			);
-			path = Wishes;
-			sourceTree = "<group>";
-		};
-		3096F65E25B9CF2A002B3201 /* Domains */ = {
-			isa = PBXGroup;
-			children = (
-				3096F65F25B9CF3B002B3201 /* Services */,
-				3096F65C25B9CEE4002B3201 /* DTO */,
-			);
-			path = Domains;
-			sourceTree = "<group>";
-		};
-		3096F65F25B9CF3B002B3201 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				3096F66025B9CF95002B3201 /* WishService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		3096F66D25B9D078002B3201 /* Wishes */ = {
-			isa = PBXGroup;
-			children = (
-				3096F64925B9BBA7002B3201 /* WishListViewController.swift */,
-				3096F64A25B9BBA7002B3201 /* WishListViewController.xib */,
-			);
-			path = Wishes;
-			sourceTree = "<group>";
-		};
-		3096F67125B9D390002B3201 /* Platforms */ = {
-			isa = PBXGroup;
-			children = (
-				3096F67225B9D3A2002B3201 /* Local */,
-				3096F68425B9D60A002B3201 /* Converter.swift */,
-			);
-			path = Platforms;
-			sourceTree = "<group>";
-		};
-		3096F67225B9D3A2002B3201 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				3096F67B25B9D591002B3201 /* Converters */,
-				3096F67625B9D464002B3201 /* LocalWishService.swift */,
-				3096F68925B9DA90002B3201 /* RandomId.swift */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		3096F67B25B9D591002B3201 /* Converters */ = {
-			isa = PBXGroup;
-			children = (
-				3096F67C25B9D5CB002B3201 /* WishConverter.swift */,
-			);
-			path = Converters;
-			sourceTree = "<group>";
-		};
 		CFBA0F2325A256C90022F959 = {
 			isa = PBXGroup;
 			children = (
@@ -197,9 +102,6 @@
 		CFBA0F2E25A256C90022F959 /* WishApp */ = {
 			isa = PBXGroup;
 			children = (
-				3096F67125B9D390002B3201 /* Platforms */,
-				3096F65E25B9CF2A002B3201 /* Domains */,
-				3096F65025B9C85A002B3201 /* Models */,
 				CFBA0F6E25A258140022F959 /* Scenes */,
 				CFBA0F2F25A256C90022F959 /* AppDelegate.swift */,
 				CFBA0F3825A256CA0022F959 /* Assets.xcassets */,
@@ -229,7 +131,6 @@
 		CFBA0F6E25A258140022F959 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3096F66D25B9D078002B3201 /* Wishes */,
 				CFBA0F6F25A258290022F959 /* HomeViewController.swift */,
 				CFBA0F7025A258290022F959 /* HomeViewController.xib */,
 			);
@@ -350,7 +251,6 @@
 			files = (
 				CFBA0F3925A256CA0022F959 /* Assets.xcassets in Resources */,
 				CFBA0F7225A258290022F959 /* HomeViewController.xib in Resources */,
-				3096F64C25B9BBA7002B3201 /* WishListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,16 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3096F66925B9CFE2002B3201 /* WishCreateDTO.swift in Sources */,
-				3096F67D25B9D5CB002B3201 /* WishConverter.swift in Sources */,
 				CFBA0F3025A256C90022F959 /* AppDelegate.swift in Sources */,
-				3096F66125B9CF95002B3201 /* WishService.swift in Sources */,
-				3096F68525B9D60A002B3201 /* Converter.swift in Sources */,
-				3096F65225B9C86B002B3201 /* Wish.swift in Sources */,
-				3096F64B25B9BBA7002B3201 /* WishListViewController.swift in Sources */,
-				3096F67725B9D464002B3201 /* LocalWishService.swift in Sources */,
 				CFBA0F7125A258290022F959 /* HomeViewController.swift in Sources */,
-				3096F68A25B9DA90002B3201 /* RandomId.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,13 +434,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T6L59L9765;
+				DEVELOPMENT_TEAM = KVV5GB9X3Y;
 				INFOPLIST_FILE = WishApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = WishApp.WishApp;
+				PRODUCT_BUNDLE_IDENTIFIER = WishApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -561,13 +453,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T6L59L9765;
+				DEVELOPMENT_TEAM = KVV5GB9X3Y;
 				INFOPLIST_FILE = WishApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = WishApp.WishApp;
+				PRODUCT_BUNDLE_IDENTIFIER = WishApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
