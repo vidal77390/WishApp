@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3083717E25BB5B4500AED70C /* WishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083717C25BB5B4500AED70C /* WishDetailViewController.swift */; };
+		3083717F25BB5B4500AED70C /* WishDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3083717D25BB5B4500AED70C /* WishDetailViewController.xib */; };
+		3083719225BB5F0E00AED70C /* WishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083719025BB5F0E00AED70C /* WishTableViewCell.swift */; };
+		3083719325BB5F0E00AED70C /* WishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3083719125BB5F0E00AED70C /* WishTableViewCell.xib */; };
 		3096F64B25B9BBA7002B3201 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F64925B9BBA7002B3201 /* WishListViewController.swift */; };
 		3096F64C25B9BBA7002B3201 /* WishListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3096F64A25B9BBA7002B3201 /* WishListViewController.xib */; };
 		3096F65225B9C86B002B3201 /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F65125B9C86B002B3201 /* Wish.swift */; };
@@ -44,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3083717C25BB5B4500AED70C /* WishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishDetailViewController.swift; sourceTree = "<group>"; };
+		3083717D25BB5B4500AED70C /* WishDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishDetailViewController.xib; sourceTree = "<group>"; };
+		3083719025BB5F0E00AED70C /* WishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishTableViewCell.swift; sourceTree = "<group>"; };
+		3083719125BB5F0E00AED70C /* WishTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishTableViewCell.xib; sourceTree = "<group>"; };
 		3096F64925B9BBA7002B3201 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		3096F64A25B9BBA7002B3201 /* WishListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListViewController.xib; sourceTree = "<group>"; };
 		3096F65125B9C86B002B3201 /* Wish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wish.swift; sourceTree = "<group>"; };
@@ -142,6 +150,10 @@
 			children = (
 				3096F64925B9BBA7002B3201 /* WishListViewController.swift */,
 				3096F64A25B9BBA7002B3201 /* WishListViewController.xib */,
+				3083717C25BB5B4500AED70C /* WishDetailViewController.swift */,
+				3083717D25BB5B4500AED70C /* WishDetailViewController.xib */,
+				3083719025BB5F0E00AED70C /* WishTableViewCell.swift */,
+				3083719125BB5F0E00AED70C /* WishTableViewCell.xib */,
 			);
 			path = Wishes;
 			sourceTree = "<group>";
@@ -350,7 +362,9 @@
 			files = (
 				CFBA0F3925A256CA0022F959 /* Assets.xcassets in Resources */,
 				CFBA0F7225A258290022F959 /* HomeViewController.xib in Resources */,
+				3083717F25BB5B4500AED70C /* WishDetailViewController.xib in Resources */,
 				3096F64C25B9BBA7002B3201 /* WishListViewController.xib in Resources */,
+				3083719325BB5F0E00AED70C /* WishTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3083719225BB5F0E00AED70C /* WishTableViewCell.swift in Sources */,
 				3096F66925B9CFE2002B3201 /* WishCreateDTO.swift in Sources */,
 				3096F67D25B9D5CB002B3201 /* WishConverter.swift in Sources */,
 				CFBA0F3025A256C90022F959 /* AppDelegate.swift in Sources */,
@@ -384,6 +399,7 @@
 				3096F64B25B9BBA7002B3201 /* WishListViewController.swift in Sources */,
 				3096F67725B9D464002B3201 /* LocalWishService.swift in Sources */,
 				CFBA0F7125A258290022F959 /* HomeViewController.swift in Sources */,
+				3083717E25BB5B4500AED70C /* WishDetailViewController.swift in Sources */,
 				3096F68A25B9DA90002B3201 /* RandomId.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
