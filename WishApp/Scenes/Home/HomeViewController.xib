@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="WishApp" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="Hqj-jb-RQw" id="lUn-a1-qPo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,24 +25,22 @@
                     <color key="textColor" red="0.056391929507541641" green="0.39447176395939088" blue="0.088453504235239053" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4J-If-3H8">
-                    <rect key="frame" x="134" y="727" width="147" height="30"/>
-                    <state key="normal" title="Accéder à la WishList"/>
-                    <connections>
-                        <action selector="GoWishList:" destination="-1" eventType="touchUpInside" id="bdb-0j-As3"/>
-                    </connections>
-                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hqj-jb-RQw">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <color key="tintColor" red="0.0" green="0.40824389459999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="s4J-If-3H8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="134" id="WnM-cy-mCZ"/>
+                <constraint firstItem="Hqj-jb-RQw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8fJ-Up-zoW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Hqj-jb-RQw" secondAttribute="bottom" id="K7e-Es-0lz"/>
+                <constraint firstItem="Hqj-jb-RQw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Yse-22-fNr"/>
                 <constraint firstItem="yxc-gW-DUg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="aCL-Uc-gyw"/>
                 <constraint firstItem="yxc-gW-DUg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bsK-Tl-74b"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="s4J-If-3H8" secondAttribute="bottom" constant="105" id="ii2-8y-Q17"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hqj-jb-RQw" secondAttribute="trailing" id="noH-sm-E3T"/>
                 <constraint firstAttribute="trailing" secondItem="yxc-gW-DUg" secondAttribute="trailing" constant="10" id="sTH-dp-uI5"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s4J-If-3H8" secondAttribute="trailing" constant="133" id="y3g-Ke-Zme"/>
             </constraints>
             <point key="canvasLocation" x="139" y="134"/>
         </view>

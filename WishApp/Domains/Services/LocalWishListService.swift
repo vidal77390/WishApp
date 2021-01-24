@@ -8,24 +8,33 @@
 import Foundation
 
 
-class LocalWishService: WishService {
-    
-    static let shared = LocalWishService()
+class LocalWishListService: WishListService {
+
+    static let shared = LocalWishListService()
     
     private init() { }
     
-    func create(dto: WishCreateDTO, completion: @escaping (Error?, Wish?) -> Void) {
-        self.read { (_, wishList) in
-            var newWishList = wishList
-            let res = Wish(id: RandomId.generate(length: 32), name: dto.name, message: dto.message)
-            newWishList.append(res)
-            self.write(newWishList) { (err) in
-                completion(err, res)
+    func create(wishList: WishList, completion: @escaping (Error?, WishList?) -> Void) {
+        self.read { (_, listOfWishList) in
+            var newListOfWishList = listOfWishList
+            newListOfWishList.append(wishList)
+            self.write(newListOfWishList) { (err) in
+                completion(err, wishList)
             }
         }
     }
     
-    func list(completion: @escaping (Error?, [Wish]) -> Void) {
+    func remove(wishList: WishList, completion: @escaping (Error?, Bool) -> Void) {
+        self.read { (_, list) in
+            var newListOfWishList = list
+            newListOfWishList.removeAll { $0.name == wishList.name }
+            self.write(newListOfWishList, completion: {(err) in
+                completion(err, true)
+            })
+        }
+    }
+    
+    func list(completion: @escaping (Error?, [WishList]) -> Void) {
         self.read(completion: completion)
     }
     
@@ -33,9 +42,9 @@ class LocalWishService: WishService {
         completion(nil)
     }
       
-    func write(_ wishList: [Wish], completion: @escaping (Error?) -> Void) {
+    func write(_ wishList: [WishList], completion: @escaping (Error?) -> Void) {
         DispatchQueue.global(qos: .background).async {
-            let dicts = wishList.compactMap(WishConverter.toDictionary(_:))
+            let dicts = wishList.compactMap(WishListConverter.toDictionary(_:))
             do {
                 let json = try JSONSerialization.data(withJSONObject: dicts, options: .fragmentsAllowed)
                 
@@ -60,7 +69,7 @@ class LocalWishService: WishService {
         }
     }
     
-    func read(completion: @escaping (Error?, [Wish]) -> Void) {
+    func read(completion: @escaping (Error?, [WishList]) -> Void) {
         DispatchQueue.global(qos: .background).async {
             guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
                 DispatchQueue.main.sync { // propagation sur le main thread (raison: UI)
@@ -74,7 +83,7 @@ class LocalWishService: WishService {
             do {
                 let data = try Data(contentsOf: wishListURL)
                 let dicts = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String: Any]]
-                let wishList = dicts.compactMap(WishConverter.toObject(_:))
+                let wishList = dicts.compactMap(WishListConverter.toObject(_:))
                 DispatchQueue.main.sync { // propagation sur le main thread (raison: UI)
                     completion(nil, wishList)
                 }

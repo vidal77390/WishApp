@@ -26,7 +26,6 @@ class WishDetailViewController: UIViewController {
         self.title = "Wish Detail"
         self.nameLabel.text = self.wish.name
         self.descriptionLabel.text = self.wish.message
-        self.idLabel.text = self.wish.id
         
 
         // Do any additional setup after loading the view.

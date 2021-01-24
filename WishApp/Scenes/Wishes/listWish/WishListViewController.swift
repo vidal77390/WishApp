@@ -11,11 +11,18 @@ class WishListViewController: UIViewController {
     
     
     @IBOutlet weak var tableView: UITableView!
-    let wishService: WishService = LocalWishService.shared
+    let wishService: WishListService = LocalWishListService.shared
+    var realWishList: WishList!
     var wishList: [Wish] = [] {
         didSet {
             self.tableView.reloadData()
         }
+    }
+    
+    class func newInstance(wishList: WishList) -> WishListViewController {
+        let WLController = WishListViewController()
+        WLController.realWishList = wishList
+        return WLController
     }
 
     override func viewDidLoad() {
@@ -34,13 +41,13 @@ class WishListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.wishService.list { (err, wishList) in
+        /*self.wishService.list { (err, wishList) in
             guard err == nil else {
                 self.wishList = []
                 return
             }
             self.wishList = wishList
-        }
+        }*/
     }
     
     @IBAction func touchNext(_ sender: Any) {
