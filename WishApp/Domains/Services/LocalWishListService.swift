@@ -34,12 +34,27 @@ class LocalWishListService: WishListService {
         }
     }
     
-    func list(completion: @escaping (Error?, [WishList]) -> Void) {
-        self.read(completion: completion)
+    func update(wishList: WishList, completion: @escaping (Error?, Bool) -> Void) {
+        self.read(completion: { (err, list) in
+            var newList = list
+            let indexOfWishList = newList.firstIndex { $0.name == wishList.name}
+            guard let index = indexOfWishList else {
+                completion(NSError(domain: "updateWishList", code: 504, userInfo: nil), false)
+                return
+            }
+            newList[index] = wishList
+            self.write(newList, completion: {err in
+                completion(err, true)
+            })
+        })
     }
     
-    func clear(completion: @escaping (Error?) -> Void) {
-        completion(nil)
+    func updateList(wishListTab: [WishList], completion: @escaping (Error?, Bool) -> Void) {
+        self.write(wishListTab, completion: { err in completion(err, true) } )
+    }
+    
+    func list(completion: @escaping (Error?, [WishList]) -> Void) {
+        self.read(completion: completion)
     }
       
     func write(_ wishList: [WishList], completion: @escaping (Error?) -> Void) {

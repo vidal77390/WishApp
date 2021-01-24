@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "home"
+        // Set Navigation Bar Button
         let rightBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createWishList))
         let leftBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(activateEditMode))
         let barButtonColor: UIColor = UIColor(cgColor: CGColor(red: CGFloat(0.09), green: CGFloat(0.5), blue: CGFloat(0.09), alpha: CGFloat(1.0)))
@@ -33,14 +34,14 @@ class HomeViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.getAndSetListOfWishList()
-        
-        // TODO test if list isnt empty
-        
+                
     }
     
     func getAndSetListOfWishList() {
         self.wishListService.list(completion: { err, list in
             self.listOfWishList = list
+            if(self.listOfWishList.count == 0) { self.tableView.isHidden = true }
+            else { self.tableView.isHidden = false}
             self.tableView.reloadData()
             print("list : \(list)")
         })
@@ -96,8 +97,9 @@ class HomeViewController: UIViewController {
     }
     
     
-    @IBAction func GoWishList(_ sender: Any) {
-        self.navigationController?.pushViewController(WishListViewController(), animated: true)
+    func goToWishListDetail(wishList: WishList) {
+        let WLDetailController = WishListDetailViewController.newInstance(wishList: wishList)
+        self.navigationController?.pushViewController(WLDetailController, animated: true)
     }
     
 
@@ -119,10 +121,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let deletedWishList = self.listOfWishList[indexPath.row]
         self.wishListService.remove(wishList: deletedWishList, completion: {(err, isDeleted) in
             if(isDeleted){
-                self.listOfWishList.remove(at: indexPath.row)
-                self.tableView.reloadData()
+                self.getAndSetListOfWishList()
             }
         })
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let tmp = self.listOfWishList[sourceIndexPath.row]
+        self.listOfWishList.remove(at: sourceIndexPath.row)
+        self.listOfWishList.insert(tmp, at: destinationIndexPath.row)
+        self.wishListService.updateList(wishListTab: self.listOfWishList, completion: {(err, isUpdated) in })
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.goToWishListDetail(wishList: self.listOfWishList[indexPath.row])
     }
     
     

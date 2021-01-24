@@ -10,7 +10,7 @@ import Foundation
 
 class WishList {
     let name: String
-    let listOfWish: [Wish]
+    var listOfWish: [Wish]
     
     init(name: String) {
         self.name = name
@@ -26,7 +26,7 @@ class WishList {
 
 class Wish {
     let name: String
-    let message: String
+    var message: String
     
     init(name: String, message: String){
         self.name = name
