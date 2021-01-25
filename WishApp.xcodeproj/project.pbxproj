@@ -11,6 +11,7 @@
 		3083717F25BB5B4500AED70C /* WishDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3083717D25BB5B4500AED70C /* WishDetailViewController.xib */; };
 		3083719225BB5F0E00AED70C /* WishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083719025BB5F0E00AED70C /* WishTableViewCell.swift */; };
 		3083719325BB5F0E00AED70C /* WishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3083719125BB5F0E00AED70C /* WishTableViewCell.xib */; };
+		308E889025BF40780034580E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308E888F25BF40780034580E /* Launch Screen.storyboard */; };
 		3096F64B25B9BBA7002B3201 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F64925B9BBA7002B3201 /* WishListViewController.swift */; };
 		3096F64C25B9BBA7002B3201 /* WishListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3096F64A25B9BBA7002B3201 /* WishListViewController.xib */; };
 		3096F65225B9C86B002B3201 /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F65125B9C86B002B3201 /* Wish.swift */; };
@@ -54,6 +55,7 @@
 		3083717D25BB5B4500AED70C /* WishDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishDetailViewController.xib; sourceTree = "<group>"; };
 		3083719025BB5F0E00AED70C /* WishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishTableViewCell.swift; sourceTree = "<group>"; };
 		3083719125BB5F0E00AED70C /* WishTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishTableViewCell.xib; sourceTree = "<group>"; };
+		308E888F25BF40780034580E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3096F64925B9BBA7002B3201 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		3096F64A25B9BBA7002B3201 /* WishListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListViewController.xib; sourceTree = "<group>"; };
 		3096F65125B9C86B002B3201 /* Wish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wish.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				CFBA0F6E25A258140022F959 /* Scenes */,
 				CFBA0F2F25A256C90022F959 /* AppDelegate.swift */,
 				CFBA0F3825A256CA0022F959 /* Assets.xcassets */,
+				308E888F25BF40780034580E /* Launch Screen.storyboard */,
 				CFBA0F3D25A256CA0022F959 /* Info.plist */,
 			);
 			path = WishApp;
@@ -380,6 +383,7 @@
 				3083717F25BB5B4500AED70C /* WishDetailViewController.xib in Resources */,
 				3096F64C25B9BBA7002B3201 /* WishListViewController.xib in Resources */,
 				3083719325BB5F0E00AED70C /* WishTableViewCell.xib in Resources */,
+				308E889025BF40780034580E /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,7 +578,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T6L59L9765;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WishApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -593,7 +597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T6L59L9765;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WishApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
