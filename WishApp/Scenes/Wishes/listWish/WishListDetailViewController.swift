@@ -119,6 +119,7 @@ extension WishListDetailViewController: UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.Wish.rawValue, for: indexPath) as! WishTableViewCell
         let wish = self.wishList.listOfWish[indexPath.row]
         cell.nameLabel.text = wish.name
+        cell.selectionStyle = .none
         return cell
     }
     
