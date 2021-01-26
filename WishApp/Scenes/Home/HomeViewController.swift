@@ -20,7 +20,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "home"
         // Set Navigation Bar Button
         let rightBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createWishList))
         let leftBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(activateEditMode))
@@ -69,7 +68,7 @@ class HomeViewController: UIViewController {
                 let wishList = WishList(name: name)
                 self.wishListService.create(wishList: wishList) { (err, wish) in
                     guard err == nil else {
-                        let alert = UIAlertController(title: "Marche pas", message: "Probleme de création", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "Erreur de création", message: "Veuillez saisir un nom unique", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
                             alert.dismiss(animated: true)
                         }))
@@ -104,6 +103,9 @@ class HomeViewController: UIViewController {
     
 
 }
+
+
+
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

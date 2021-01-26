@@ -12,8 +12,6 @@
 		3083719225BB5F0E00AED70C /* WishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083719025BB5F0E00AED70C /* WishTableViewCell.swift */; };
 		3083719325BB5F0E00AED70C /* WishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3083719125BB5F0E00AED70C /* WishTableViewCell.xib */; };
 		308E889025BF40780034580E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308E888F25BF40780034580E /* Launch Screen.storyboard */; };
-		3096F64B25B9BBA7002B3201 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F64925B9BBA7002B3201 /* WishListViewController.swift */; };
-		3096F64C25B9BBA7002B3201 /* WishListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3096F64A25B9BBA7002B3201 /* WishListViewController.xib */; };
 		3096F65225B9C86B002B3201 /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F65125B9C86B002B3201 /* Wish.swift */; };
 		3096F66125B9CF95002B3201 /* WishListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F66025B9CF95002B3201 /* WishListService.swift */; };
 		3096F66925B9CFE2002B3201 /* WishCreateDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F66825B9CFE2002B3201 /* WishCreateDTO.swift */; };
@@ -31,6 +29,8 @@
 		CFBA0F7225A258290022F959 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA0F7025A258290022F959 /* HomeViewController.xib */; };
 		CFBA0F7B25A278C30022F959 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBA0F7A25A278C30022F959 /* ContactsUI.framework */; };
 		CFBA0F8A25AFA5180022F959 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBA0F8925AFA5180022F959 /* MessageUI.framework */; };
+		CFEA71BE25BF6FCC00DE2969 /* WishListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEA71BC25BF6FCC00DE2969 /* WishListDetailViewController.swift */; };
+		CFEA71BF25BF6FCC00DE2969 /* WishListDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEA71BD25BF6FCC00DE2969 /* WishListDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +56,6 @@
 		3083719025BB5F0E00AED70C /* WishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishTableViewCell.swift; sourceTree = "<group>"; };
 		3083719125BB5F0E00AED70C /* WishTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishTableViewCell.xib; sourceTree = "<group>"; };
 		308E888F25BF40780034580E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		3096F64925B9BBA7002B3201 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
-		3096F64A25B9BBA7002B3201 /* WishListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListViewController.xib; sourceTree = "<group>"; };
 		3096F65125B9C86B002B3201 /* Wish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wish.swift; sourceTree = "<group>"; };
 		3096F66025B9CF95002B3201 /* WishListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListService.swift; sourceTree = "<group>"; };
 		3096F66825B9CFE2002B3201 /* WishCreateDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishCreateDTO.swift; sourceTree = "<group>"; };
@@ -81,6 +79,8 @@
 		CFBA0F7025A258290022F959 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CFBA0F7A25A278C30022F959 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 		CFBA0F8925AFA5180022F959 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		CFEA71BC25BF6FCC00DE2969 /* WishListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListDetailViewController.swift; sourceTree = "<group>"; };
+		CFEA71BD25BF6FCC00DE2969 /* WishListDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,10 +175,10 @@
 		CF90C8B525BDB7F6003190D3 /* listWish */ = {
 			isa = PBXGroup;
 			children = (
-				3096F64925B9BBA7002B3201 /* WishListViewController.swift */,
-				3096F64A25B9BBA7002B3201 /* WishListViewController.xib */,
 				3083719025BB5F0E00AED70C /* WishTableViewCell.swift */,
 				3083719125BB5F0E00AED70C /* WishTableViewCell.xib */,
+				CFEA71BC25BF6FCC00DE2969 /* WishListDetailViewController.swift */,
+				CFEA71BD25BF6FCC00DE2969 /* WishListDetailViewController.xib */,
 			);
 			path = listWish;
 			sourceTree = "<group>";
@@ -378,10 +378,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFBA0F3925A256CA0022F959 /* Assets.xcassets in Resources */,
+				CFEA71BF25BF6FCC00DE2969 /* WishListDetailViewController.xib in Resources */,
 				CFBA0F7225A258290022F959 /* HomeViewController.xib in Resources */,
 				CF90C8C325BDB892003190D3 /* WishListTableViewCell.xib in Resources */,
 				3083717F25BB5B4500AED70C /* WishDetailViewController.xib in Resources */,
-				3096F64C25B9BBA7002B3201 /* WishListViewController.xib in Resources */,
 				3083719325BB5F0E00AED70C /* WishTableViewCell.xib in Resources */,
 				308E889025BF40780034580E /* Launch Screen.storyboard in Resources */,
 			);
@@ -416,11 +416,11 @@
 				3096F66125B9CF95002B3201 /* WishListService.swift in Sources */,
 				3096F68525B9D60A002B3201 /* Converter.swift in Sources */,
 				3096F65225B9C86B002B3201 /* Wish.swift in Sources */,
-				3096F64B25B9BBA7002B3201 /* WishListViewController.swift in Sources */,
 				3096F67725B9D464002B3201 /* LocalWishListService.swift in Sources */,
 				CFBA0F7125A258290022F959 /* HomeViewController.swift in Sources */,
 				3083717E25BB5B4500AED70C /* WishDetailViewController.swift in Sources */,
 				CF90C8B025BDB71B003190D3 /* WishListConverter.swift in Sources */,
+				CFEA71BE25BF6FCC00DE2969 /* WishListDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

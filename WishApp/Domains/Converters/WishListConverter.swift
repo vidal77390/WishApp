@@ -17,9 +17,12 @@ class WishListConverter: Converter {
     typealias Obj = WishList
     
     static func toDictionary(_ obj: WishList) -> [String : Any] {
+        let dictOfListWish = obj.listOfWish.compactMap { wish in
+            WishConverter.toDictionary(wish)
+        }
         return [
             Keys.name: obj.name,
-            Keys.listOfWish: obj.listOfWish
+            Keys.listOfWish: dictOfListWish
         ]
     }
     

@@ -16,10 +16,16 @@ class LocalWishListService: WishListService {
     
     func create(wishList: WishList, completion: @escaping (Error?, WishList?) -> Void) {
         self.read { (_, listOfWishList) in
-            var newListOfWishList = listOfWishList
-            newListOfWishList.append(wishList)
-            self.write(newListOfWishList) { (err) in
-                completion(err, wishList)
+            let index = listOfWishList.firstIndex { $0.name == wishList.name }
+            if(index != nil) {
+                completion(NSError(domain: "Name already use", code: 1, userInfo: nil), nil)
+                return
+            } else {
+                var newListOfWishList = listOfWishList
+                newListOfWishList.append(wishList)
+                self.write(newListOfWishList) { (err) in
+                    completion(err, wishList)
+                }
             }
         }
     }

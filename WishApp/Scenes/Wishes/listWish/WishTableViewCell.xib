@@ -12,35 +12,22 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="WishTableViewCell" customModule="WishApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGT-Gj-gQc">
-                        <rect key="frame" x="33" y="12" width="175" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGT-Gj-gQc">
+                        <rect key="frame" x="15" y="10" width="290" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.32893160570000002" green="0.51411771429999997" blue="0.90592390300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Exu-S5-aRg">
-                        <rect key="frame" x="210" y="6" width="94" height="32"/>
-                        <connections>
-                            <action selector="touchStep:" destination="KGk-i7-Jjw" eventType="valueChanged" id="XKY-6i-hTU"/>
-                        </connections>
-                    </stepper>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="FGT-Gj-gQc" secondAttribute="bottom" constant="32" id="5eW-hl-xeH"/>
-                    <constraint firstItem="Exu-S5-aRg" firstAttribute="leading" secondItem="FGT-Gj-gQc" secondAttribute="trailing" constant="2" id="AxP-OF-mB4"/>
-                    <constraint firstItem="FGT-Gj-gQc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Bv3-yM-7BD"/>
-                    <constraint firstItem="FGT-Gj-gQc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Iti-Qs-qZm"/>
-                    <constraint firstItem="Exu-S5-aRg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-49" id="KVb-CI-bzu"/>
-                    <constraint firstAttribute="trailing" secondItem="FGT-Gj-gQc" secondAttribute="trailing" constant="5" id="O4S-G5-GgH"/>
-                    <constraint firstItem="Exu-S5-aRg" firstAttribute="centerY" secondItem="FGT-Gj-gQc" secondAttribute="centerY" id="a9F-mc-Mg0"/>
-                    <constraint firstItem="Exu-S5-aRg" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="fsF-eC-oJU"/>
-                    <constraint firstItem="Exu-S5-aRg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iMb-ky-OyJ"/>
-                    <constraint firstItem="FGT-Gj-gQc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="j8U-7f-cBe"/>
-                    <constraint firstItem="FGT-Gj-gQc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="yZI-e8-esS"/>
+                    <constraint firstItem="FGT-Gj-gQc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="cFN-u5-PKe"/>
+                    <constraint firstAttribute="trailing" secondItem="FGT-Gj-gQc" secondAttribute="trailing" constant="15" id="orF-il-BTY"/>
+                    <constraint firstItem="FGT-Gj-gQc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="sEY-Dm-jf6"/>
+                    <constraint firstItem="FGT-Gj-gQc" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="taq-WE-tEY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
