@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3076A3CC25C0C3AB0036ED6B /* GenerateId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076A3CB25C0C3AB0036ED6B /* GenerateId.swift */; };
 		3083717E25BB5B4500AED70C /* WishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083717C25BB5B4500AED70C /* WishDetailViewController.swift */; };
 		3083717F25BB5B4500AED70C /* WishDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3083717D25BB5B4500AED70C /* WishDetailViewController.xib */; };
 		3083719225BB5F0E00AED70C /* WishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083719025BB5F0E00AED70C /* WishTableViewCell.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3076A3CB25C0C3AB0036ED6B /* GenerateId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateId.swift; sourceTree = "<group>"; };
 		3083717C25BB5B4500AED70C /* WishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishDetailViewController.swift; sourceTree = "<group>"; };
 		3083717D25BB5B4500AED70C /* WishDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishDetailViewController.xib; sourceTree = "<group>"; };
 		3083719025BB5F0E00AED70C /* WishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishTableViewCell.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				3096F68425B9D60A002B3201 /* Converter.swift */,
 				3096F67C25B9D5CB002B3201 /* WishConverter.swift */,
 				CF90C8AF25BDB71B003190D3 /* WishListConverter.swift */,
+				3076A3CB25C0C3AB0036ED6B /* GenerateId.swift */,
 			);
 			path = Converters;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3083719225BB5F0E00AED70C /* WishTableViewCell.swift in Sources */,
+				3076A3CC25C0C3AB0036ED6B /* GenerateId.swift in Sources */,
 				3096F66925B9CFE2002B3201 /* WishCreateDTO.swift in Sources */,
 				CF90C8C225BDB892003190D3 /* WishListTableViewCell.swift in Sources */,
 				3096F67D25B9D5CB002B3201 /* WishConverter.swift in Sources */,

@@ -116,6 +116,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.WishList.rawValue, for: indexPath) as! WishListTableViewCell
         let wishList = self.listOfWishList[indexPath.row]
         cell.nameLabel.text = wishList.name
+        cell.nameLabel.textColor =  UIColor(cgColor: CGColor(red: CGFloat(0.13), green: CGFloat(0.40), blue: CGFloat(2.19), alpha: CGFloat(1.0)))
         return cell
     }
     

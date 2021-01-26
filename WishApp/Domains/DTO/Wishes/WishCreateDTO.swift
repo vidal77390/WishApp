@@ -10,4 +10,5 @@ import Foundation
 struct WishCreateDTO {
     let name: String
     let message: String
+    let id: String
 }
