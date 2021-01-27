@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,63 +21,37 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0HW-X9-wna">
-                    <rect key="frame" x="30" y="119" width="354" height="34"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="34" id="CpQ-ff-MB2"/>
-                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="374" id="N8K-Lx-wan"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="394" id="Rpk-th-lRz"/>
-                        <constraint firstAttribute="width" constant="97" id="hhO-1h-ceu"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="iuG-bs-CdY"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0HW-X9-wna">
+                    <rect key="frame" x="30" y="194" width="354" height="34"/>
+                    <color key="backgroundColor" name="AccentColor"/>
+                    <color key="textColor" red="0.32893160570000002" green="0.51411771429999997" blue="0.90592390300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ta-jl-l9q">
-                    <rect key="frame" x="30" y="190" width="354" height="34"/>
-                    <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="7mk-MV-9Nu"/>
-                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="364" id="9Lo-ud-CL6"/>
-                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="374" id="LG1-Gi-pb7"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="394" id="Sg2-hY-Jh4"/>
-                        <constraint firstAttribute="height" constant="34" id="Vp9-Xc-IcO"/>
-                        <constraint firstAttribute="width" constant="97" id="hvG-QR-tCK"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ta-jl-l9q">
+                    <rect key="frame" x="30" y="263" width="354" height="34"/>
+                    <color key="textColor" red="0.32893160570000002" green="0.51411771429999997" blue="0.90592390300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="0HW-X9-wna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="0Wx-Qq-3zc"/>
-                <constraint firstItem="0HW-X9-wna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="2zy-IC-yQx"/>
-                <constraint firstItem="0HW-X9-wna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="8fy-2x-pkC"/>
-                <constraint firstItem="0HW-X9-wna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="AeO-Em-NdR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Ta-jl-l9q" secondAttribute="trailing" constant="10" id="E5e-W2-Lqi"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0HW-X9-wna" secondAttribute="trailing" constant="25" id="Ghq-YS-YAp"/>
-                <constraint firstItem="0HW-X9-wna" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="75" id="KbH-cR-vqL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Ta-jl-l9q" secondAttribute="trailing" constant="30" id="Olv-R4-gRA"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Ta-jl-l9q" secondAttribute="trailing" constant="30" id="SaP-dC-kqV"/>
-                <constraint firstItem="5Ta-jl-l9q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UHe-GZ-Laz"/>
-                <constraint firstItem="5Ta-jl-l9q" firstAttribute="top" secondItem="0HW-X9-wna" secondAttribute="bottom" constant="37" id="WQZ-Y8-J76"/>
-                <constraint firstItem="5Ta-jl-l9q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="eQj-hP-Unj"/>
-                <constraint firstItem="5Ta-jl-l9q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="hwd-3r-XKj"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Ta-jl-l9q" secondAttribute="trailing" constant="20" id="jG7-0O-5UJ"/>
-                <constraint firstItem="0HW-X9-wna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="kcX-q4-RRC"/>
-                <constraint firstItem="0HW-X9-wna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="oNk-wJ-O6r"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0HW-X9-wna" secondAttribute="trailing" constant="10" id="qTF-FV-4Fh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0HW-X9-wna" secondAttribute="trailing" constant="30" id="qyN-f0-nOJ"/>
-                <constraint firstItem="5Ta-jl-l9q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="rwn-i7-DKp"/>
-                <constraint firstItem="0HW-X9-wna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="sTR-Hs-BJo"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0HW-X9-wna" secondAttribute="trailing" constant="20" id="sZF-sM-lnm"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0HW-X9-wna" secondAttribute="trailing" constant="30" id="tyv-0v-FQb"/>
-                <constraint firstItem="0HW-X9-wna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="zgM-DP-YNN"/>
+                <constraint firstItem="5Ta-jl-l9q" firstAttribute="top" secondItem="0HW-X9-wna" secondAttribute="bottom" constant="35" id="CGZ-Ri-14l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Ta-jl-l9q" secondAttribute="trailing" constant="30" id="Pfm-CD-u1j"/>
+                <constraint firstItem="0HW-X9-wna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="ZiJ-gd-aVV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0HW-X9-wna" secondAttribute="trailing" constant="30" id="jwL-Mb-0PY"/>
+                <constraint firstItem="5Ta-jl-l9q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="lcO-SD-jEQ"/>
+                <constraint firstItem="0HW-X9-wna" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="po0-q2-chV"/>
             </constraints>
             <point key="canvasLocation" x="105.79710144927537" y="85.714285714285708"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="AccentColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

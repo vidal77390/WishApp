@@ -16,10 +16,12 @@ class HomeViewController: UIViewController {
         
     let wishListService: WishListService = LocalWishListService.shared
 
+    @IBOutlet var subTitleLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "WishList"
         // Set Navigation Bar Button
         let rightBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createWishList))
         let leftBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(activateEditMode))
@@ -39,11 +41,21 @@ class HomeViewController: UIViewController {
     func getAndSetListOfWishList() {
         self.wishListService.list(completion: { err, list in
             self.listOfWishList = list
-            if(self.listOfWishList.count == 0) { self.tableView.isHidden = true }
-            else { self.tableView.isHidden = false}
+            self.testIfListEmpty()
             self.tableView.reloadData()
             print("list : \(list)")
         })
+    }
+    
+    func testIfListEmpty() -> Void {
+        if(self.listOfWishList.count == 0) {
+            self.tableView.isHidden = true
+            self.subTitleLabel.isHidden = true
+        }
+        else {
+            self.tableView.isHidden = false
+            self.subTitleLabel.isHidden = false
+        }
     }
     
     @objc
@@ -68,11 +80,7 @@ class HomeViewController: UIViewController {
                 let wishList = WishList(name: name)
                 self.wishListService.create(wishList: wishList) { (err, wish) in
                     guard err == nil else {
-                        let alert = UIAlertController(title: "Erreur de création", message: "Veuillez saisir un nom unique", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                            alert.dismiss(animated: true)
-                        }))
-                        self.present(alert, animated: true)
+                        self.presentErrorAlert()
                         return
                     }
                     print("wishlist created with : \(nameTextField.text!)")
@@ -88,6 +96,18 @@ class HomeViewController: UIViewController {
             alertController.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapOutside)))
         })
     
+    }
+    
+    func presentErrorAlert()-> Void {
+        let alert = UIAlertController(title: "Erreur de création", message: "Veuillez saisir un nom unique", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            alert.dismiss(animated: true)
+        }))
+        present(alert, animated: true, completion: {
+            alert.view.superview?.isUserInteractionEnabled = true
+            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapOutside)))
+        })
+        
     }
     
     @objc

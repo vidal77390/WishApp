@@ -20,7 +20,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5x-3P-oMQ">
                         <rect key="frame" x="219.5" y="35" width="41.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.056391929510000001" green="0.394471764" blue="0.088453504239999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="textColor" red="0.32893160570000002" green="0.51411771429999997" blue="0.90592390300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="highlightedColor" name="AccentColor"/>
                     </label>
                 </subviews>

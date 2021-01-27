@@ -86,12 +86,18 @@ class WishListDetailViewController: UIViewController {
                 guard let updatedWishList = self.wishList else {
                     return
                 }
-                updatedWishList.listOfWish.append(newWish)
-                print("list updated : \(updatedWishList)")
-                self.wishService.update(wishList: updatedWishList, completion: {(err, isUpdated) in
-                    if(isUpdated) { self.setWishList(updatedWishList) }
-                })
-                
+                // Si le nom est deja prit present ErrorAlert
+                print("wishes : ")
+                updatedWishList.listOfWish.forEach { wish in print("\(wish.name)")}
+                let indexOfWish = updatedWishList.listOfWish.firstIndex { $0.name == newWish.name }
+                if(indexOfWish != nil) { self.presentErrorAlert() }
+                else {
+                    updatedWishList.listOfWish.append(newWish)
+                    print("list updated : \(updatedWishList)")
+                    self.wishService.update(wishList: updatedWishList, completion: {(err, isUpdated) in
+                        if(isUpdated) { self.setWishList(updatedWishList) }
+                    })
+                }
             }
         }
         
@@ -106,6 +112,17 @@ class WishListDetailViewController: UIViewController {
     @objc
     func tapOutside() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func presentErrorAlert()-> Void {
+        let alert = UIAlertController(title: "Erreur de création", message: "Veuillez saisir un nom unique", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            alert.dismiss(animated: true)
+        }))
+        present(alert, animated: true, completion: {
+            alert.view.superview?.isUserInteractionEnabled = true
+            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapOutside)))
+        })
     }
     
 }

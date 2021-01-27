@@ -48,6 +48,9 @@ class WishDetailViewController: UIViewController {
         updateWish.message = description
         if(!description.isEmpty){
             self.wishService.updateWish(wish: updateWish, completion: {(err, isUpdated) in
+                if(isUpdated) {
+                    self.presentSuccessAlert()
+                }
             })
             
         }
@@ -56,6 +59,17 @@ class WishDetailViewController: UIViewController {
     @objc
     func tapOutside() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func presentSuccessAlert()-> Void {
+        let alert = UIAlertController(title: "Wish mis a jour !", message: "La description de votre wish a bien été mis a jour", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            alert.dismiss(animated: true)
+        }))
+        present(alert, animated: true, completion: {
+            alert.view.superview?.isUserInteractionEnabled = true
+            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapOutside)))
+        })
     }
 }
 
