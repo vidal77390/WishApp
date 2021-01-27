@@ -27,9 +27,11 @@ class WishList {
 class Wish {
     let name: String
     var message: String
+    let id: String
     
-    init(name: String, message: String){
+    init(name: String, message: String, id: String){
         self.name = name
         self.message = message
+        self.id = id
     }
 }

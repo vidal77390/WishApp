@@ -55,6 +55,33 @@ class LocalWishListService: WishListService {
         })
     }
     
+    func updateWish(wish: Wish, completion: @escaping (Error?, Bool) -> Void) {
+            self.read(completion: { (err, list) in
+                let newList = list //List des wishList
+                var indexOfWishList: Array<WishList>.Index?
+                var indexOfWish: Array<Wish>.Index?
+
+                for (index, wishList) in newList.enumerated() {
+                    let tmp = wishList.listOfWish.firstIndex { $0.id == wish.id }
+                    if(tmp != nil) {
+                        indexOfWish = tmp
+                        indexOfWishList = index
+                    }
+                }
+
+                guard let indexWishList = indexOfWishList,
+                      let indexWish = indexOfWish else {
+                    completion(NSError(domain: "cant find", code: 504, userInfo: nil), false)
+                    return
+                }
+                // Update Wish
+                newList[indexWishList].listOfWish[indexWish] = wish
+                self.write(newList, completion: {err in
+                    completion(err, true)
+                })
+            })
+        }
+    
     func updateList(wishListTab: [WishList], completion: @escaping (Error?, Bool) -> Void) {
         self.write(wishListTab, completion: { err in completion(err, true) } )
     }

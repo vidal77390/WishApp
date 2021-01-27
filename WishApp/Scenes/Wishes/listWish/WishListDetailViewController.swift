@@ -45,7 +45,7 @@ class WishListDetailViewController: UIViewController {
         
         // Set Navigation Bar Button
         let rightBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createWish))
-        let barButtonColor: UIColor = UIColor(cgColor: CGColor(red: CGFloat(0.09), green: CGFloat(0.5), blue: CGFloat(0.09), alpha: CGFloat(1.0)))
+        let barButtonColor: UIColor = UIColor(cgColor: CGColor(red: CGFloat(0.13), green: CGFloat(0.40), blue: CGFloat(2.19), alpha: CGFloat(1.0)))
         rightBarButton.tintColor = barButtonColor
         navigationItem.rightBarButtonItem = rightBarButton
 
@@ -82,7 +82,7 @@ class WishListDetailViewController: UIViewController {
         let createAction = UIAlertAction(title: "createWish", style: .default) { (action) -> Void in
             let name: String = nameTextField.text!
             if(!name.isEmpty){
-                let newWish = Wish(name: name, message: "")
+                let newWish = Wish(name: name, message: "", id: GenerateId.generate(length: 32))
                 guard let updatedWishList = self.wishList else {
                     return
                 }

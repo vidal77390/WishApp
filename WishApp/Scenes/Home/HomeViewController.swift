@@ -117,6 +117,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let wishList = self.listOfWishList[indexPath.row]
         cell.nameLabel.text = wishList.name
         cell.selectionStyle = .none
+
         return cell
     }
     
