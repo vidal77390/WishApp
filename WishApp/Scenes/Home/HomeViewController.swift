@@ -16,8 +16,8 @@ class HomeViewController: UIViewController {
         
     let wishListService: WishListService = LocalWishListService.shared
 
-    @IBOutlet var subTitleLabel: UILabel!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var EmptyListTrigger: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,18 +43,18 @@ class HomeViewController: UIViewController {
             self.listOfWishList = list
             self.testIfListEmpty()
             self.tableView.reloadData()
-            print("list : \(list)")
+            print("List : \(list)")
         })
     }
     
     func testIfListEmpty() -> Void {
         if(self.listOfWishList.count == 0) {
             self.tableView.isHidden = true
-            self.subTitleLabel.isHidden = true
+            self.EmptyListTrigger.isHidden = false
         }
         else {
             self.tableView.isHidden = false
-            self.subTitleLabel.isHidden = false
+            self.EmptyListTrigger.isHidden = true
         }
     }
     
@@ -68,13 +68,13 @@ class HomeViewController: UIViewController {
     @objc
     func createWishList() -> Void {
         var nameTextField: UITextField!
-        let alertController = UIAlertController(title: "New WishList !", message: "Veuillez saisir le nom de votre WishList", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "New WishList !", message: "Please enter the name of your WishList", preferredStyle: .alert)
         alertController.addTextField { (txtName) -> Void in
             nameTextField = txtName
-            nameTextField.placeholder = "Nom"
+            nameTextField.placeholder = "Name"
         }
         
-        let createAction = UIAlertAction(title: "createWishList", style: .default) { (action) -> Void in
+        let createAction = UIAlertAction(title: "Create WishList", style: .default) { (action) -> Void in
             let name: String = nameTextField.text!
             if(!name.isEmpty){
                 let wishList = WishList(name: name)
@@ -83,7 +83,7 @@ class HomeViewController: UIViewController {
                         self.presentErrorAlert()
                         return
                     }
-                    print("wishlist created with : \(nameTextField.text!)")
+                    print("Wishlist created with : \(nameTextField.text!)")
                     self.getAndSetListOfWishList()
                     self.navigationController?.popViewController(animated: true)
                 }
@@ -99,7 +99,7 @@ class HomeViewController: UIViewController {
     }
     
     func presentErrorAlert()-> Void {
-        let alert = UIAlertController(title: "Erreur de création", message: "Veuillez saisir un nom unique", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Creation error", message: "Please enter a unique name", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
             alert.dismiss(animated: true)
         }))
@@ -146,6 +146,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         self.wishListService.remove(wishList: deletedWishList, completion: {(err, isDeleted) in
             if(isDeleted){
                 self.getAndSetListOfWishList()
+                self.presentSuccessAlert()
             }
         })
     }
@@ -159,6 +160,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.goToWishListDetail(wishList: self.listOfWishList[indexPath.row])
+    }
+    
+    func presentSuccessAlert()-> Void {
+        let alert = UIAlertController(title: "WishList list updated !", message: "A WishList has been deleted", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            alert.dismiss(animated: true)
+        }))
+        present(alert, animated: true, completion: {
+            alert.view.superview?.isUserInteractionEnabled = true
+            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapOutside)))
+        })
     }
     
     
