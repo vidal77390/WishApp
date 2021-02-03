@@ -21,6 +21,15 @@ class WishList {
         self.name = name
         self.listOfWish = listOfWish
     }
+    
+    func toMessageString() -> String{
+        var message: String = String(self.name) + ":\n"
+        for i in self.listOfWish{
+            message += "\t" + String(i.name) + " - " + String(i.message) + "\n"
+        }
+        
+        return message
+    }
 }
 
 
