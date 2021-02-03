@@ -158,7 +158,10 @@ extension WishListDetailViewController: UITableViewDelegate, UITableViewDataSour
         }
         updatedWishList.listOfWish.remove(at: indexPath.row)
         self.wishService.update(wishList: updatedWishList, completion: {(err, isUpdated) in
-            if(isUpdated) { self.setWishList(updatedWishList) }
+            if(isUpdated) {
+                self.setWishList(updatedWishList)
+                self.presentSuccessAlert()
+            }
         })
     }
     
@@ -171,6 +174,17 @@ extension WishListDetailViewController: UITableViewDelegate, UITableViewDataSour
         updatedWishList.listOfWish.insert(res, at: destinationIndexPath.row)
         self.wishService.update(wishList: updatedWishList, completion: {(err, isUpdated) in
             if(isUpdated) { self.setWishList(updatedWishList) }
+        })
+    }
+    
+    func presentSuccessAlert()-> Void {
+        let alert = UIAlertController(title: "WishList updated !", message: "A Wish has been deleted", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            alert.dismiss(animated: true)
+        }))
+        present(alert, animated: true, completion: {
+            alert.view.superview?.isUserInteractionEnabled = true
+            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapOutside)))
         })
     }
 }
