@@ -35,6 +35,8 @@ class WishListDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("wiewdidload")
+        var WishListToSendByMessage = self.wishList.toMessageString()
+        print(WishListToSendByMessage)
         self.title = wishList.name
         
         self.tableView.register(UINib(nibName: "WishTableViewCell", bundle: nil), forCellReuseIdentifier: Identifier.Wish.rawValue)
