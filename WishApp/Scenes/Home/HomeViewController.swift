@@ -173,6 +173,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         })
     }
     
+    private func handleMarkAsFavourite() {
+           print("Marked as favourite")
+       }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: "Send") { [weak self] (action, view, completionHandler) in self?.handleMarkAsFavourite()
+        completionHandler(true)
+        }
+        action.backgroundColor = .systemGreen
+
+        return UISwipeActionsConfiguration(actions: [action])
+    }
     
 }
 
