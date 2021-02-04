@@ -51,17 +51,15 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="5Ta-jl-l9q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="5Tt-qJ-6w6"/>
-                <constraint firstItem="qOe-59-TZC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="161" id="8Gt-WY-dds"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qOe-59-TZC" secondAttribute="trailing" constant="161" id="JIR-RI-6Ss"/>
+                <constraint firstItem="qOe-59-TZC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HS9-DN-86T"/>
                 <constraint firstItem="0HW-X9-wna" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Jp5-Sf-qP9"/>
                 <constraint firstItem="5Ta-jl-l9q" firstAttribute="top" secondItem="qOe-59-TZC" secondAttribute="bottom" constant="8" symbolic="YES" id="Mla-nI-myY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Ta-jl-l9q" secondAttribute="trailing" constant="30" id="N9a-3N-xLA"/>
-                <constraint firstItem="R3C-UN-dTz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="182" id="NgD-bv-ulx"/>
                 <constraint firstItem="R3C-UN-dTz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="121" id="XZC-nS-SJq"/>
                 <constraint firstItem="0HW-X9-wna" firstAttribute="top" secondItem="R3C-UN-dTz" secondAttribute="bottom" constant="8" symbolic="YES" id="YsL-Dq-dOw"/>
+                <constraint firstItem="R3C-UN-dTz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fab-xk-2zR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0HW-X9-wna" secondAttribute="trailing" constant="30" id="gHm-70-fZm"/>
                 <constraint firstItem="qOe-59-TZC" firstAttribute="top" secondItem="0HW-X9-wna" secondAttribute="bottom" constant="6" id="uxz-qz-Sou"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R3C-UN-dTz" secondAttribute="trailing" constant="182" id="xzX-4u-cCC"/>
             </constraints>
             <point key="canvasLocation" x="105.79710144927537" y="85.714285714285708"/>
         </view>

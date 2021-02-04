@@ -13,12 +13,14 @@ import MessageUI
 class HomeViewController: UIViewController {
     
     var contactStore = CNContactStore()
+    let contactVC = CNContactPickerViewController()
     var phoneNumber: String?
     
     enum Identifier: String {
         case WishList
     }
     var listOfWishList: [WishList] = []
+    var wishListSelected: WishList?
     let wishListService: WishListService = LocalWishListService.shared
 
     @IBOutlet var tableView: UITableView!
@@ -36,10 +38,16 @@ class HomeViewController: UIViewController {
         navigationItem.leftBarButtonItem = leftBarButton
         navigationItem.rightBarButtonItem = rightBarButton
         
+        self.contactVC.delegate = self
+        
         self.tableView.register(UINib(nibName: "WishListTableViewCell", bundle: nil), forCellReuseIdentifier: Identifier.WishList.rawValue)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.getAndSetListOfWishList()
+        
+        self.requestForContactAccess(completionHandler: {access in
+            // TODO handle refus     pop up ?
+        })
         
     }
     
@@ -149,18 +157,19 @@ class HomeViewController: UIViewController {
             }
         }
 
-    func sendMessage(_ sender: Any) {
-        guard let phone = self.phoneNumber else {
+    func sendMessage() {
+        guard let phone = self.phoneNumber,
+              let message = self.wishListSelected?.toMessageString() else {
             return;
         }
         let composeVC = MFMessageComposeViewController()
         composeVC.messageComposeDelegate = self
         composeVC.recipients = [phone]
-        composeVC.body = "hello"
+        composeVC.body = message
         
         if MFMessageComposeViewController.canSendText() {
             self.present(composeVC, animated: true, completion: nil)
-        } else { print("shit") }
+        }
     }
 
 }
@@ -215,9 +224,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func presentcontactchoice()-> Void {
-        let alert = UIAlertController(title: "Send Message action", message: "Do you want to send your WishList to \(self.phoneNumber)", preferredStyle: .alert)
+        guard let phone = self.phoneNumber else {
+            return
+        }
+        let alert = UIAlertController(title: "Send Message action", message: "Do you want to send your WishList to \(phone)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-            alert.dismiss(animated: true)
+            alert.dismiss(animated: true, completion: {
+                print("send to : \(phone)")
+                self.sendMessage()
+            })
         }))
         present(alert, animated: true, completion: {
             alert.view.superview?.isUserInteractionEnabled = true
@@ -227,18 +242,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     private func handleChooseContact() {
-        print("Choose contact ...")
-        let contactVC = CNContactPickerViewController()
-        contactVC.delegate = self
-        self.present(contactVC, animated: true, completion: nil)
-        self.presentcontactchoice()
-        print("dkqshfjkhskhf \(self.phoneNumber)")
-        self.sendMessage(self.present(contactVC, animated: true, completion: nil))
+        self.present(self.contactVC, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .normal, title: "Send") { [weak self] (action, view, completionHandler) in self?.handleChooseContact()
-        completionHandler(true)
+            self?.wishListSelected = self?.listOfWishList[indexPath.row]
+            completionHandler(true)
         }
         action.backgroundColor = .systemGreen
 
@@ -253,7 +263,9 @@ extension HomeViewController: CNContactPickerDelegate {
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         let phoneNumber: String = contact.phoneNumbers[0].value.stringValue
         self.phoneNumber = phoneNumber
-        print("selected contact : \(phoneNumber)")
+        self.contactVC.dismiss(animated: true, completion: {
+            self.presentcontactchoice()
+        })
     }
 }
 
