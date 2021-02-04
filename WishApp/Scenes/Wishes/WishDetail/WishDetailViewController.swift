@@ -62,7 +62,7 @@ class WishDetailViewController: UIViewController {
     }
     
     func presentSuccessAlert()-> Void {
-        let alert = UIAlertController(title: "Wish mis a jour !", message: "La description de votre wish a bien été mis a jour", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Wish updated !", message: "The description of your wish has been updated", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
             alert.dismiss(animated: true)
         }))

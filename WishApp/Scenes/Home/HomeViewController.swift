@@ -6,22 +6,27 @@
 //
 
 import UIKit
+import Contacts
+import ContactsUI
+import MessageUI
 
 class HomeViewController: UIViewController {
+    
+    var contactStore = CNContactStore()
+    var phoneNumber: String?
     
     enum Identifier: String {
         case WishList
     }
     var listOfWishList: [WishList] = []
-        
     let wishListService: WishListService = LocalWishListService.shared
 
-    @IBOutlet var subTitleLabel: UILabel!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var EmptyListTrigger: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "WishList"
+        self.title = "WishLists"
         // Set Navigation Bar Button
         let rightBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createWishList))
         let leftBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(activateEditMode))
@@ -35,7 +40,7 @@ class HomeViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.getAndSetListOfWishList()
-                
+        
     }
     
     func getAndSetListOfWishList() {
@@ -43,18 +48,18 @@ class HomeViewController: UIViewController {
             self.listOfWishList = list
             self.testIfListEmpty()
             self.tableView.reloadData()
-            print("list : \(list)")
+            print("List : \(list)")
         })
     }
     
     func testIfListEmpty() -> Void {
         if(self.listOfWishList.count == 0) {
             self.tableView.isHidden = true
-            self.subTitleLabel.isHidden = true
+            self.EmptyListTrigger.isHidden = false
         }
         else {
             self.tableView.isHidden = false
-            self.subTitleLabel.isHidden = false
+            self.EmptyListTrigger.isHidden = true
         }
     }
     
@@ -68,13 +73,13 @@ class HomeViewController: UIViewController {
     @objc
     func createWishList() -> Void {
         var nameTextField: UITextField!
-        let alertController = UIAlertController(title: "New WishList !", message: "Veuillez saisir le nom de votre WishList", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "New WishList !", message: "Please enter the name of your WishList", preferredStyle: .alert)
         alertController.addTextField { (txtName) -> Void in
             nameTextField = txtName
-            nameTextField.placeholder = "Nom"
+            nameTextField.placeholder = "Name"
         }
         
-        let createAction = UIAlertAction(title: "createWishList", style: .default) { (action) -> Void in
+        let createAction = UIAlertAction(title: "Create WishList", style: .default) { (action) -> Void in
             let name: String = nameTextField.text!
             if(!name.isEmpty){
                 let wishList = WishList(name: name)
@@ -83,7 +88,7 @@ class HomeViewController: UIViewController {
                         self.presentErrorAlert()
                         return
                     }
-                    print("wishlist created with : \(nameTextField.text!)")
+                    print("Wishlist created with : \(nameTextField.text!)")
                     self.getAndSetListOfWishList()
                     self.navigationController?.popViewController(animated: true)
                 }
@@ -99,7 +104,7 @@ class HomeViewController: UIViewController {
     }
     
     func presentErrorAlert()-> Void {
-        let alert = UIAlertController(title: "Erreur de création", message: "Veuillez saisir un nom unique", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Creation error", message: "Please enter a unique name", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
             alert.dismiss(animated: true)
         }))
@@ -121,6 +126,42 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(WLDetailController, animated: true)
     }
     
+    @objc
+    func showContactPicker() -> Void {
+        let contactVC = CNContactPickerViewController()
+        contactVC.delegate = self
+        self.present(contactVC, animated: true, completion: nil)
+    }
+    
+    func requestForContactAccess(completionHandler: @escaping (Bool) -> Void ) {
+            let autorisationStatus = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
+            print("authorized : \(autorisationStatus)")
+            switch autorisationStatus {
+                case .authorized:
+                    completionHandler(true)
+                case .denied, .notDetermined:
+                    self.contactStore.requestAccess(for: CNEntityType.contacts, completionHandler: {(access, error) -> Void in
+                        if(access) {completionHandler(true)}
+                        else {completionHandler(false)}
+                    })
+                default:
+                    completionHandler(false)
+            }
+        }
+
+    func sendMessage(_ sender: Any) {
+        guard let phone = self.phoneNumber else {
+            return;
+        }
+        let composeVC = MFMessageComposeViewController()
+        composeVC.messageComposeDelegate = self
+        composeVC.recipients = [phone]
+        composeVC.body = "hello"
+        
+        if MFMessageComposeViewController.canSendText() {
+            self.present(composeVC, animated: true, completion: nil)
+        } else { print("shit") }
+    }
 
 }
 
@@ -146,6 +187,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         self.wishListService.remove(wishList: deletedWishList, completion: {(err, isDeleted) in
             if(isDeleted){
                 self.getAndSetListOfWishList()
+                self.presentSuccessAlert()
             }
         })
     }
@@ -161,9 +203,65 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         self.goToWishListDetail(wishList: self.listOfWishList[indexPath.row])
     }
     
+    func presentSuccessAlert()-> Void {
+        let alert = UIAlertController(title: "WishList list updated !", message: "A WishList has been deleted", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            alert.dismiss(animated: true)
+        }))
+        present(alert, animated: true, completion: {
+            alert.view.superview?.isUserInteractionEnabled = true
+            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapOutside)))
+        })
+    }
+    
+    func presentcontactchoice()-> Void {
+        let alert = UIAlertController(title: "Send Message action", message: "Do you want to send your WishList to \(self.phoneNumber)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            alert.dismiss(animated: true)
+        }))
+        present(alert, animated: true, completion: {
+            alert.view.superview?.isUserInteractionEnabled = true
+            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapOutside)))
+        })
+    }
+    
+    
+    private func handleChooseContact() {
+        print("Choose contact ...")
+        let contactVC = CNContactPickerViewController()
+        contactVC.delegate = self
+        self.present(contactVC, animated: true, completion: nil)
+        self.presentcontactchoice()
+        print("dkqshfjkhskhf \(self.phoneNumber)")
+        self.sendMessage(self.present(contactVC, animated: true, completion: nil))
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: "Send") { [weak self] (action, view, completionHandler) in self?.handleChooseContact()
+        completionHandler(true)
+        }
+        action.backgroundColor = .systemGreen
+
+        return UISwipeActionsConfiguration(actions: [action])
+    }
     
 }
 
 
+extension HomeViewController: CNContactPickerDelegate {
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        let phoneNumber: String = contact.phoneNumbers[0].value.stringValue
+        self.phoneNumber = phoneNumber
+        print("selected contact : \(phoneNumber)")
+    }
+}
 
+extension HomeViewController: MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    
+}
 

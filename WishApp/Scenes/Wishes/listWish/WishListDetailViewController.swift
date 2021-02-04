@@ -75,13 +75,13 @@ class WishListDetailViewController: UIViewController {
     @objc
     func createWish() {
         var nameTextField: UITextField!
-        let alertController = UIAlertController(title: "New Wish !", message: "Veuillez saisir le nom de votre Wish", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "New Wish !", message: "Please enter the name of your Wish", preferredStyle: .alert)
         alertController.addTextField { (txtName) -> Void in
             nameTextField = txtName
-            nameTextField.placeholder = "Nom"
+            nameTextField.placeholder = "Name"
         }
         
-        let createAction = UIAlertAction(title: "createWish", style: .default) { (action) -> Void in
+        let createAction = UIAlertAction(title: "Create Wish", style: .default) { (action) -> Void in
             let name: String = nameTextField.text!
             if(!name.isEmpty){
                 let newWish = Wish(name: name, message: "", id: GenerateId.generate(length: 32))
@@ -89,13 +89,13 @@ class WishListDetailViewController: UIViewController {
                     return
                 }
                 // Si le nom est deja prit present ErrorAlert
-                print("wishes : ")
+                print("Wishes : ")
                 updatedWishList.listOfWish.forEach { wish in print("\(wish.name)")}
                 let indexOfWish = updatedWishList.listOfWish.firstIndex { $0.name == newWish.name }
                 if(indexOfWish != nil) { self.presentErrorAlert() }
                 else {
                     updatedWishList.listOfWish.append(newWish)
-                    print("list updated : \(updatedWishList)")
+                    print("List updated : \(updatedWishList)")
                     self.wishService.update(wishList: updatedWishList, completion: {(err, isUpdated) in
                         if(isUpdated) { self.setWishList(updatedWishList) }
                     })
@@ -117,7 +117,7 @@ class WishListDetailViewController: UIViewController {
     }
     
     func presentErrorAlert()-> Void {
-        let alert = UIAlertController(title: "Erreur de création", message: "Veuillez saisir un nom unique", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Creation error", message: "Please enter a unique name", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
             alert.dismiss(animated: true)
         }))
@@ -158,7 +158,10 @@ extension WishListDetailViewController: UITableViewDelegate, UITableViewDataSour
         }
         updatedWishList.listOfWish.remove(at: indexPath.row)
         self.wishService.update(wishList: updatedWishList, completion: {(err, isUpdated) in
-            if(isUpdated) { self.setWishList(updatedWishList) }
+            if(isUpdated) {
+                self.setWishList(updatedWishList)
+                self.presentSuccessAlert()
+            }
         })
     }
     
@@ -171,6 +174,17 @@ extension WishListDetailViewController: UITableViewDelegate, UITableViewDataSour
         updatedWishList.listOfWish.insert(res, at: destinationIndexPath.row)
         self.wishService.update(wishList: updatedWishList, completion: {(err, isUpdated) in
             if(isUpdated) { self.setWishList(updatedWishList) }
+        })
+    }
+    
+    func presentSuccessAlert()-> Void {
+        let alert = UIAlertController(title: "WishList updated !", message: "A Wish has been deleted", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            alert.dismiss(animated: true)
+        }))
+        present(alert, animated: true, completion: {
+            alert.view.superview?.isUserInteractionEnabled = true
+            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapOutside)))
         })
     }
 }
