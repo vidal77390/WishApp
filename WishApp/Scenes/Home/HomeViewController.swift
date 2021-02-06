@@ -262,7 +262,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         message.backgroundColor = .systemGreen
         
-        let facebook = UIContextualAction(style: .normal,
+        let share = UIContextualAction(style: .normal,
                                          title: "Share") { [weak self] (action, view, completionHandler) in
             guard let wishlist = self?.listOfWishList[indexPath.row] else {
                 return
@@ -270,9 +270,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             self?.otherShare(wishlist: wishlist)
             completionHandler(true)
         }
-        facebook.backgroundColor = .systemBlue
+        share.backgroundColor = .systemBlue
 
-        return UISwipeActionsConfiguration(actions: [message, facebook])
+        return UISwipeActionsConfiguration(actions: [message, share])
     }
     
 }
