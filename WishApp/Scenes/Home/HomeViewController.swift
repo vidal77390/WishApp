@@ -9,6 +9,7 @@ import UIKit
 import Contacts
 import ContactsUI
 import MessageUI
+import Social
 
 class HomeViewController: UIViewController {
     
@@ -171,6 +172,15 @@ class HomeViewController: UIViewController {
             self.present(composeVC, animated: true, completion: nil)
         }
     }
+    
+    func otherShare(wishlist: WishList) {
+        
+        let message = wishlist.toMessageString()
+        let sharingItems: [Any] = [message]
+        let activityController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
+
+        present(activityController, animated: true)
+    }
 
 }
 
@@ -246,13 +256,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .normal, title: "Send") { [weak self] (action, view, completionHandler) in self?.handleChooseContact()
+        let message = UIContextualAction(style: .normal, title: "Send Message") { [weak self] (action, view, completionHandler) in self?.handleChooseContact()
             self?.wishListSelected = self?.listOfWishList[indexPath.row]
             completionHandler(true)
         }
-        action.backgroundColor = .systemGreen
+        message.backgroundColor = .systemGreen
+        
+        let facebook = UIContextualAction(style: .normal,
+                                         title: "Share") { [weak self] (action, view, completionHandler) in
+            guard let wishlist = self?.listOfWishList[indexPath.row] else {
+                return
+            }
+            self?.otherShare(wishlist: wishlist)
+            completionHandler(true)
+        }
+        facebook.backgroundColor = .systemBlue
 
-        return UISwipeActionsConfiguration(actions: [action])
+        return UISwipeActionsConfiguration(actions: [message, facebook])
     }
     
 }
