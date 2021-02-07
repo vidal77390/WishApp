@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     var contactStore = CNContactStore()
     let contactVC = CNContactPickerViewController()
     var phoneNumber: String?
-    
+    var indexPath : IndexPath?
     enum Identifier: String {
         case WishList
     }
@@ -173,12 +173,12 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func otherShare(wishlist: WishList) {
+    func otherShare(wishlist: WishList, indexPath: IndexPath) {
         
         let message = wishlist.toMessageString()
         let sharingItems: [Any] = [message]
         let activityController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
-
+        activityController.popoverPresentationController?.sourceView = self.tableView.cellForRow(at: indexPath )
         present(activityController, animated: true)
     }
 
@@ -267,7 +267,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             guard let wishlist = self?.listOfWishList[indexPath.row] else {
                 return
             }
-            self?.otherShare(wishlist: wishlist)
+            self?.otherShare(wishlist: wishlist, indexPath: indexPath)
             completionHandler(true)
         }
         share.backgroundColor = .systemBlue
