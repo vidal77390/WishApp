@@ -9,13 +9,14 @@ import UIKit
 import Contacts
 import ContactsUI
 import MessageUI
+import Social
 
 class HomeViewController: UIViewController {
     
     var contactStore = CNContactStore()
     let contactVC = CNContactPickerViewController()
     var phoneNumber: String?
-    
+    var indexPath : IndexPath?
     enum Identifier: String {
         case WishList
     }
@@ -171,6 +172,15 @@ class HomeViewController: UIViewController {
             self.present(composeVC, animated: true, completion: nil)
         }
     }
+    
+    func otherShare(wishlist: WishList, indexPath: IndexPath) {
+        
+        let message = wishlist.toMessageString()
+        let sharingItems: [Any] = [message]
+        let activityController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceView = self.tableView.cellForRow(at: indexPath )
+        present(activityController, animated: true)
+    }
 
 }
 
@@ -246,13 +256,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .normal, title: "Send") { [weak self] (action, view, completionHandler) in self?.handleChooseContact()
+        let message = UIContextualAction(style: .normal, title: "Send Message") { [weak self] (action, view, completionHandler) in self?.handleChooseContact()
             self?.wishListSelected = self?.listOfWishList[indexPath.row]
             completionHandler(true)
         }
-        action.backgroundColor = .systemGreen
+        message.backgroundColor = .systemGreen
+        
+        let share = UIContextualAction(style: .normal,
+                                         title: "Share") { [weak self] (action, view, completionHandler) in
+            guard let wishlist = self?.listOfWishList[indexPath.row] else {
+                return
+            }
+            self?.otherShare(wishlist: wishlist, indexPath: indexPath)
+            completionHandler(true)
+        }
+        share.backgroundColor = .systemBlue
 
-        return UISwipeActionsConfiguration(actions: [action])
+        return UISwipeActionsConfiguration(actions: [message, share])
     }
     
 }
