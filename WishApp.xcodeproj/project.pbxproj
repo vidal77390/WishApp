@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A31FD431AFAF8588E18DA46 /* Pods_WishApp_WishAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A65BE5DDD9602503C64D4EE /* Pods_WishApp_WishAppUITests.framework */; };
 		3076A3CC25C0C3AB0036ED6B /* GenerateId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076A3CB25C0C3AB0036ED6B /* GenerateId.swift */; };
 		3083717E25BB5B4500AED70C /* WishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083717C25BB5B4500AED70C /* WishDetailViewController.swift */; };
 		3083717F25BB5B4500AED70C /* WishDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3083717D25BB5B4500AED70C /* WishDetailViewController.xib */; };
@@ -19,6 +20,7 @@
 		3096F67725B9D464002B3201 /* LocalWishListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F67625B9D464002B3201 /* LocalWishListService.swift */; };
 		3096F67D25B9D5CB002B3201 /* WishConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F67C25B9D5CB002B3201 /* WishConverter.swift */; };
 		3096F68525B9D60A002B3201 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096F68425B9D60A002B3201 /* Converter.swift */; };
+		BD189A77419C2B89B542302C /* Pods_WishApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8CE345BBDFFE42B5A5DED86 /* Pods_WishApp.framework */; };
 		CF90C8B025BDB71B003190D3 /* WishListConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF90C8AF25BDB71B003190D3 /* WishListConverter.swift */; };
 		CF90C8C225BDB892003190D3 /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF90C8C025BDB892003190D3 /* WishListTableViewCell.swift */; };
 		CF90C8C325BDB892003190D3 /* WishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF90C8C125BDB892003190D3 /* WishListTableViewCell.xib */; };
@@ -32,6 +34,7 @@
 		CFBA0F8A25AFA5180022F959 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBA0F8925AFA5180022F959 /* MessageUI.framework */; };
 		CFEA71BE25BF6FCC00DE2969 /* WishListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEA71BC25BF6FCC00DE2969 /* WishListDetailViewController.swift */; };
 		CFEA71BF25BF6FCC00DE2969 /* WishListDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEA71BD25BF6FCC00DE2969 /* WishListDetailViewController.xib */; };
+		F9AA364E0A0A85F25AAA87AB /* Pods_WishAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F60F1AF3669972AF5B67F7 /* Pods_WishAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,14 @@
 		3096F67625B9D464002B3201 /* LocalWishListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWishListService.swift; sourceTree = "<group>"; };
 		3096F67C25B9D5CB002B3201 /* WishConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishConverter.swift; sourceTree = "<group>"; };
 		3096F68425B9D60A002B3201 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		38F60F1AF3669972AF5B67F7 /* Pods_WishAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WishAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A65BE5DDD9602503C64D4EE /* Pods_WishApp_WishAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WishApp_WishAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		596E8EDE9E986A05A28546DD /* Pods-WishAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishAppTests.release.xcconfig"; path = "Target Support Files/Pods-WishAppTests/Pods-WishAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		650DB6C04A7F238D24D9A159 /* Pods-WishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.debug.xcconfig"; path = "Target Support Files/Pods-WishApp/Pods-WishApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A143CD2A9CC1F4A8103F61B0 /* Pods-WishAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishAppTests.debug.xcconfig"; path = "Target Support Files/Pods-WishAppTests/Pods-WishAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD9271B0F17D27FEECE4843A /* Pods-WishApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.release.xcconfig"; path = "Target Support Files/Pods-WishApp/Pods-WishApp.release.xcconfig"; sourceTree = "<group>"; };
+		C8CE345BBDFFE42B5A5DED86 /* Pods_WishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC766BDFFC73DC5A7A063691 /* Pods-WishApp-WishAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp-WishAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-WishApp-WishAppUITests/Pods-WishApp-WishAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF90C8AF25BDB71B003190D3 /* WishListConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListConverter.swift; sourceTree = "<group>"; };
 		CF90C8C025BDB892003190D3 /* WishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
 		CF90C8C125BDB892003190D3 /* WishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListTableViewCell.xib; sourceTree = "<group>"; };
@@ -83,6 +94,7 @@
 		CFBA0F8925AFA5180022F959 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CFEA71BC25BF6FCC00DE2969 /* WishListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListDetailViewController.swift; sourceTree = "<group>"; };
 		CFEA71BD25BF6FCC00DE2969 /* WishListDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListDetailViewController.xib; sourceTree = "<group>"; };
+		E0FFC58A7C9D50F94D7C58E7 /* Pods-WishApp-WishAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp-WishAppUITests.release.xcconfig"; path = "Target Support Files/Pods-WishApp-WishAppUITests/Pods-WishApp-WishAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,7 @@
 			files = (
 				CFBA0F8A25AFA5180022F959 /* MessageUI.framework in Frameworks */,
 				CFBA0F7B25A278C30022F959 /* ContactsUI.framework in Frameworks */,
+				BD189A77419C2B89B542302C /* Pods_WishApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9AA364E0A0A85F25AAA87AB /* Pods_WishAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A31FD431AFAF8588E18DA46 /* Pods_WishApp_WishAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +229,7 @@
 				CFBA0F5025A256CA0022F959 /* WishAppUITests */,
 				CFBA0F2D25A256C90022F959 /* Products */,
 				CFBA0F7925A278C30022F959 /* Frameworks */,
+				FA5815D0824D1B0597E49786 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,8 +289,25 @@
 			children = (
 				CFBA0F8925AFA5180022F959 /* MessageUI.framework */,
 				CFBA0F7A25A278C30022F959 /* ContactsUI.framework */,
+				C8CE345BBDFFE42B5A5DED86 /* Pods_WishApp.framework */,
+				4A65BE5DDD9602503C64D4EE /* Pods_WishApp_WishAppUITests.framework */,
+				38F60F1AF3669972AF5B67F7 /* Pods_WishAppTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA5815D0824D1B0597E49786 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				650DB6C04A7F238D24D9A159 /* Pods-WishApp.debug.xcconfig */,
+				AD9271B0F17D27FEECE4843A /* Pods-WishApp.release.xcconfig */,
+				CC766BDFFC73DC5A7A063691 /* Pods-WishApp-WishAppUITests.debug.xcconfig */,
+				E0FFC58A7C9D50F94D7C58E7 /* Pods-WishApp-WishAppUITests.release.xcconfig */,
+				A143CD2A9CC1F4A8103F61B0 /* Pods-WishAppTests.debug.xcconfig */,
+				596E8EDE9E986A05A28546DD /* Pods-WishAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,9 +317,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFBA0F5625A256CA0022F959 /* Build configuration list for PBXNativeTarget "WishApp" */;
 			buildPhases = (
+				DBEE0A4D13A96F78D892B620 /* [CP] Check Pods Manifest.lock */,
 				CFBA0F2825A256C90022F959 /* Sources */,
 				CFBA0F2925A256C90022F959 /* Frameworks */,
 				CFBA0F2A25A256C90022F959 /* Resources */,
+				55659FBE67961914EC07DF6A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,6 +336,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFBA0F5925A256CA0022F959 /* Build configuration list for PBXNativeTarget "WishAppTests" */;
 			buildPhases = (
+				1C00BD5E645ED445C8163307 /* [CP] Check Pods Manifest.lock */,
 				CFBA0F3E25A256CA0022F959 /* Sources */,
 				CFBA0F3F25A256CA0022F959 /* Frameworks */,
 				CFBA0F4025A256CA0022F959 /* Resources */,
@@ -319,9 +355,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFBA0F5C25A256CA0022F959 /* Build configuration list for PBXNativeTarget "WishAppUITests" */;
 			buildPhases = (
+				E8CDD2C2CF13F69528AE09F9 /* [CP] Check Pods Manifest.lock */,
 				CFBA0F4925A256CA0022F959 /* Sources */,
 				CFBA0F4A25A256CA0022F959 /* Frameworks */,
 				CFBA0F4B25A256CA0022F959 /* Resources */,
+				A003DAE966893052BA6F4B0E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,6 +443,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C00BD5E645ED445C8163307 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WishAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55659FBE67961914EC07DF6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A003DAE966893052BA6F4B0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WishApp-WishAppUITests/Pods-WishApp-WishAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WishApp-WishAppUITests/Pods-WishApp-WishAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WishApp-WishAppUITests/Pods-WishApp-WishAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBEE0A4D13A96F78D892B620 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WishApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8CDD2C2CF13F69528AE09F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WishApp-WishAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CFBA0F2825A256C90022F959 /* Sources */ = {
@@ -578,6 +719,7 @@
 		};
 		CFBA0F5725A256CA0022F959 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 650DB6C04A7F238D24D9A159 /* Pods-WishApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -597,6 +739,7 @@
 		};
 		CFBA0F5825A256CA0022F959 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9271B0F17D27FEECE4843A /* Pods-WishApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -616,6 +759,7 @@
 		};
 		CFBA0F5A25A256CA0022F959 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A143CD2A9CC1F4A8103F61B0 /* Pods-WishAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -637,6 +781,7 @@
 		};
 		CFBA0F5B25A256CA0022F959 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 596E8EDE9E986A05A28546DD /* Pods-WishAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -658,6 +803,7 @@
 		};
 		CFBA0F5D25A256CA0022F959 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC766BDFFC73DC5A7A063691 /* Pods-WishApp-WishAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -677,6 +823,7 @@
 		};
 		CFBA0F5E25A256CA0022F959 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0FFC58A7C9D50F94D7C58E7 /* Pods-WishApp-WishAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

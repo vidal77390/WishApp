@@ -9,6 +9,8 @@ import UIKit
 import Contacts
 import ContactsUI
 import MessageUI
+import FacebookShare
+import FacebookLogin
 
 class HomeViewController: UIViewController {
     
@@ -29,9 +31,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "WishLists"
+        print("loooggiinnn")
+        self.fbLogin()
         // Set Navigation Bar Button
         let rightBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createWishList))
-        let leftBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(activateEditMode))
+        let leftBarButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(shareFbPicture))
+        // let leftBarButton: UIBarButtonItem = UIBarButtonItem(customView: shareButton)
         let barButtonColor: UIColor = UIColor(cgColor: CGColor(red: CGFloat(0.13), green: CGFloat(0.40), blue: CGFloat(2.19), alpha: CGFloat(1.0)))
         rightBarButton.tintColor = barButtonColor
         leftBarButton.tintColor = barButtonColor
@@ -49,6 +54,10 @@ class HomeViewController: UIViewController {
             // TODO handle refus     pop up ?
         })
         
+        print("initialize")
+        self.shareFbPicture()
+        print("end initialize")
+
     }
     
     func getAndSetListOfWishList() {
@@ -76,6 +85,46 @@ class HomeViewController: UIViewController {
         UIView.animate(withDuration: 0.33, animations: {
             self.tableView.isEditing = !self.tableView.isEditing
         })
+    }
+    
+    @objc
+    func shareFbPicture(){
+        print("run func")
+        guard let image: UIImage = UIImage(named: "—Pngtree—list icon_3715126") else{
+            print("fail in guard")
+            return
+        }
+        let photo: SharePhoto  = SharePhoto(image: image, userGenerated: true)
+        let content: SharePhotoContent = SharePhotoContent()
+        content.photos = [photo]
+        
+//        let shareButton = FBShareButton()
+//        shareButton.shareContent = content
+//        shareButton.center = self.view.center
+        let dialog = MessageDialog(content: content, delegate: self)
+        if(dialog.canShow){
+            print("will show dialog")
+            dialog.show()
+            print("had show dialog")
+        }else { print("cant show dialog")}
+
+        //self.view.addSubview(shareButton)
+    }
+    
+    func fbLogin() {
+        let loginManager = LoginManager()
+        loginManager.logOut()
+        loginManager.logIn(permissions: [], viewController: self) { loginResult in
+            switch loginResult {
+            case .cancelled:
+                print("cancelled login")
+            case .failed(_):
+                print("failed")
+            case .success(granted: _, declined: _, token: let token):
+                print("login success ")
+                print("token :: \(token)")
+            }
+        }
     }
     
     @objc
@@ -275,5 +324,20 @@ extension HomeViewController: MFMessageComposeViewControllerDelegate {
     }
     
     
+}
+
+extension HomeViewController: SharingDelegate {
+    func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {
+        print("results")
+    }
+    
+    func sharer(_ sharer: Sharing, didFailWithError error: Error) {
+        print("error : \(error.localizedDescription)")
+        print("didfail")
+    }
+    
+    func sharerDidCancel(_ sharer: Sharing) {
+        print("didcancel")
+    }
 }
 
