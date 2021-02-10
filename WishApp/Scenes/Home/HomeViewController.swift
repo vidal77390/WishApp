@@ -108,7 +108,7 @@ class HomeViewController: UIViewController {
             print("had show dialog")
         }else { print("cant show dialog")}
 
-        //self.view.addSubview(shareButton)
+//        self.view.addSubview(shareButton)
     }
     
     func fbLogin() {
